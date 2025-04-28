@@ -1,0 +1,281 @@
+[2025-04-24 17:56:18] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-24 18:11:40] File received: 2025.04.24-18.11.39.csv, Size: 28 bytes, VIN: MISSING, USER_ID: MISSING
+[2025-04-24 18:15:15] File received: 2025.04.24-18.15.14.csv, Size: 93 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 18:20:29] File received: 2025.04.24-18.20.26.csv, Size: 2382 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 18:27:24] File received: 2025.04.24-18.27.17.csv, Size: 93 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 18:28:26] File received: 2025.04.24-18.28.26.csv, Size: 2384 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 18:34:56] File received: 2025.04.24-18.34.55.csv, Size: 2378 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 18:35:52] File received: 2025.04.24-18.35.52.csv, Size: 2388 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 18:44:36] File received: 2025.04.24-18.44.35.csv, Size: 2380 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 20:05:55] File received: 2025.04.24-20.05.42.csv, Size: 2462 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 20:06:14] File received: 2025.04.24-20.06.12.csv, Size: 2462 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 20:17:35] File received: 2025.04.24-20.17.28.csv, Size: 93 bytes, VIN: MISSING, USER_ID: 1
+[2025-04-24 20:17:57] File received: 2025.04.24-20.17.56.csv, Size: 93 bytes, VIN: MISSING, USER_ID: 1
+[2025-04-24 20:19:15] File received: 2025.04.24-20.19.13.csv, Size: 2454 bytes, VIN: MISSING, USER_ID: 1
+[2025-04-24 20:51:13] File received: 2025.04.24-20.51.12.csv, Size: 2412 bytes, VIN: MISSING, USER_ID: 1
+[2025-04-24 21:26:20] File received: 2025.04.24-21.26.20.csv, Size: 93 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-24 21:27:00] File received: 2025.04.24-21.26.59.csv, Size: 93 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-25 14:57:07] File received: 2025.04.25-14.57.06.csv, Size: 2352 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-25 14:57:20] File received: 2025.04.25-14.57.19.csv, Size: 2349 bytes, VIN: MISSING, USER_ID: 2
+[2025-04-26 12:59:51] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 12:59:58] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 13:00:43] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 13:00:44] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 13:02:48] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 13:02:49] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 13:02:49] Prediction ID: 1
+[2025-04-26 13:04:26] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 13:04:26] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 13:04:26] Prediction ID: 2
+[2025-04-26 13:04:57] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 13:04:58] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 13:04:58] Prediction ID: 3
+[2025-04-26 15:51:58] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 15:52:06] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 15:52:06] Prediction ID: 4
+[2025-04-26 15:53:28] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 15:53:28] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 15:53:28] Prediction ID: 5
+[2025-04-26 18:21:13] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-26 18:21:20] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 18:21:20] Prediction ID: 6
+[2025-04-26 19:44:38] File received: 2025.04.26-19.44.37.csv, Size: 2353 bytes, VIN: GR750522, USER_ID: 2
+[2025-04-26 19:44:46] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 16.01568546930949,
+    "RemainingLifetimeHours": 43783.98431453069,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 19:44:46] Prediction ID: 7
+[2025-04-26 19:44:51] File received: 2025.04.26-19.44.50.csv, Size: 2353 bytes, VIN: GR750522, USER_ID: 2
+[2025-04-26 19:44:51] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 16.002977167765298,
+    "RemainingLifetimeHours": 43783.997022832235,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 19:44:51] Prediction ID: 8
+[2025-04-26 19:46:33] File received: 2025.04.26-19.46.32.csv, Size: 2347 bytes, VIN: GR750522, USER_ID: 2
+[2025-04-26 19:46:33] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 15.626646118164063,
+    "RemainingLifetimeHours": 43784.373353881834,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 19:46:33] Prediction ID: 9
+[2025-04-26 19:46:41] File received: 2025.04.26-19.46.40.csv, Size: 2350 bytes, VIN: GR750522, USER_ID: 2
+[2025-04-26 19:46:41] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 15.626646118164063,
+    "RemainingLifetimeHours": 43784.373353881834,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 19:46:41] Prediction ID: 10
+[2025-04-26 19:46:56] File received: 2025.04.26-19.46.55.csv, Size: 2344 bytes, VIN: GR750522, USER_ID: 2
+[2025-04-26 19:46:56] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 16.727253513336183,
+    "RemainingLifetimeHours": 43783.27274648666,
+    "TroubleCodeCategory": 13
+}
+[2025-04-26 19:46:56] Prediction ID: 11
+[2025-04-28 13:57:43] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 13:58:03] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 13:58:03] Prediction ID: 12
+[2025-04-28 14:02:01] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:02:02] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:02:02] Prediction ID: 13
+[2025-04-28 14:03:34] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:03:35] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:03:35] Prediction ID: 14
+[2025-04-28 14:12:05] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:12:05] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:12:05] Prediction ID: 15
+[2025-04-28 14:15:15] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:15:15] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:15:15] Prediction ID: 16
+[2025-04-28 14:15:26] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:15:27] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:15:27] Prediction ID: 17
+[2025-04-28 14:15:29] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:15:29] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:15:29] Prediction ID: 18
+[2025-04-28 14:15:31] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:15:31] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:15:31] Prediction ID: 19
+[2025-04-28 14:21:13] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:21:13] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:21:13] Prediction ID: 20
+[2025-04-28 14:21:26] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:21:26] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:21:26] Prediction ID: 21
+[2025-04-28 14:22:30] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:22:30] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:22:30] Prediction ID: 22
+[2025-04-28 14:22:32] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:22:33] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:22:33] Prediction ID: 23
+[2025-04-28 14:28:43] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:28:44] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:28:44] Prediction ID: 24
+[2025-04-28 14:32:39] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:32:39] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:32:39] Prediction ID: 25
+[2025-04-28 14:33:32] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:33:33] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:33:33] Prediction ID: 26
+[2025-04-28 14:38:36] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:38:36] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:38:36] Prediction ID: 27
+[2025-04-28 14:39:32] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 14:39:32] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 14:39:32] Prediction ID: 28
+[2025-04-28 15:09:46] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 15:09:54] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 15:09:54] Prediction ID: 29
+[2025-04-28 15:43:31] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 15:43:39] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 15:43:39] Prediction ID: 30
+[2025-04-28 15:43:42] File received: 2025.04.23-19.47.57.csv, Size: 2359 bytes, VIN: testtrial123, USER_ID: 1
+[2025-04-28 15:43:42] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 19.36961591720581,
+    "RemainingLifetimeHours": 43780.6303840828,
+    "TroubleCodeCategory": 13
+}
+[2025-04-28 15:43:42] Prediction ID: 31

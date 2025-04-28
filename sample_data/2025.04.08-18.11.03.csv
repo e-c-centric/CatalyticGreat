@@ -1,0 +1,71 @@
+PID,Description,Value,Units
+65,Heated Cat / Nox Monitor test status,0,
+65,Evaporative system test status,257,
+36,O2 Sensor B1S1 lambda,1.0001984,
+65,Secondary air sys test status,0,
+65,A/C refrigerant test status,0,
+3,Fuel System 2 Status,0,
+65,Catalyst test status,257,
+78,Time since DTCs cleared,0.04111111,h
+36,O2 Sensor B1S1,3.3158464,V
+65,Oxygen Sensor test status,257,
+65,Oxygen Sensor Heater test status,256,
+7,Long Term Fuel Trim (Bank 1),-10.9375,%
+65,EGR System test status,257,
+51,Barometric Pressure (absolute),96.0,kPa
+66,ECU voltage,13.532,V
+76,Comm. Throttle Actuator Cntrl,17.647058,%
+81,Fuel type,1,
+77,Engine running while MIL on,0.0,h
+52,O2 Sensor 1 lambda,1.0242771,
+52,O2 Sensor 1 current,0.046875,mA
+62,CAT Temperature B1S2,349.8,°C
+48,Warm-ups since ECU reset,8.0,
+67,Absolute Engine Load,18.82353,%
+13,Vehicle Speed,0.0,km/h
+19,Oxygen sensors present,3,
+68,Commanded Equivalence Ratio,99.957275,%
+49,Distance since ECU reset,11.0,km
+31,Time Since Engine Start,0.17277777,h
+1,Number of Fault Codes,0.0,
+21,O2 Sensor Voltage B1S2,780.0,mV
+1,Catalyst test status,257,
+1,Heated Cat / Nox Monitor test status,0,
+60,CAT Temperature B1S1,472.0,°C
+1,Evaporative system test status,256,
+12,Engine RPM,771.0,/min
+69,Relative Throttle Position,0.0,%
+1,Secondary air sys test status,0,
+1,A/C refrigerant test status,0,
+1,MIL status,0,
+1,Oxygen Sensor test status,257,
+1,Oxygen Sensor Heater test status,256,
+1,EGR System test status,256,
+65,Component test status,1,
+17,Absolute Throttle Position,17.647058,%
+65,Ignition monitoring status,0,
+15,Intake Air Temperature,70.0,°C
+65,Misfire status,1,
+65,Fuel system test status,1,
+3,Fuel System 1 Status,2,
+4,Calculated Load Value,43.137257,%
+14,Timing Advance (Cyl. #1),3.0,°
+28,OBD conforms to,1,
+33,Distance since MIL activated,0.0,km
+71,Absolute Throttle Position B,49.411766,%
+5,Coolant Temperature,90.0,°C
+101,Glowplug lamp status,0,
+101,AT Drive Status,256,
+46,Commanded Evaporative Purge,18.039215,%
+101,MT Drive status,0,
+101,Power take off (PTO) status,0,
+16,Air Flow Rate (MAF sensor),3.09,g/s
+21,O2 Sensor fuel trim B1S2,99.21875,%
+74,Absolute Throttle Position E,31.764706,%
+1,Misfire status,1,
+1,Fuel system test status,1,
+83,Absolute Evap system Vapor Pressure,96.775,kPa
+1,Component test status,1,
+1,Ignition monitoring status,0,
+6,Short Term Fuel Trim (Bank 1),2.34375,%
+73,Absolute Throttle Position D,16.078432,%

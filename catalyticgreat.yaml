@@ -1,0 +1,392 @@
+openapi: 3.0.3
+info:
+  title: CatalyticGreat+ API
+  version: 1.0.0
+  description: |
+    API for vehicle health, user authentication, vehicle management, diagnostics, and file uploads for the CatalyticGreat+ platform.
+servers:
+  - url: http://137.184.208.235/
+    description: Production server
+  # - url: http://yourdomain.com
+  #   description: Development server
+
+paths:
+  /api.php/auth.php:
+    post:
+      summary: Register or login a user
+      description: Register or login a user. Use the `action` parameter to specify the operation.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [register, login]
+                  description: Action to perform
+                name:
+                  type: string
+                  description: Name (required for register)
+                email:
+                  type: string
+                  description: Email address
+                phone_number:
+                  type: string
+                  description: Phone number (required for register)
+                role:
+                  type: string
+                  enum: [driver, mechanic, dvla, epa]
+                  description: User role (required for register)
+                password:
+                  type: string
+                  description: Password
+      responses:
+        '200':
+          description: Success or error message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                  message:
+                    type: string
+                  user_id:
+                    type: integer
+                  role:
+                    type: string
+
+  /api.php/add.php:
+    post:
+      summary: Add a new vehicle
+      description: Add a new vehicle to the system.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: User ID of the owner
+                vin:
+                  type: string
+                  description: Vehicle Identification Number
+      responses:
+        '200':
+          description: Vehicle added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  vehicle_id:
+                    type: integer
+        '400':
+          description: Missing user_id or vin
+        '500':
+          description: Failed to add vehicle
+
+  /api.php/fetch.php:
+    post:
+      summary: Fetch vehicles for a user
+      description: Returns all vehicles for a given user_id.
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: User ID
+      responses:
+        '200':
+          description: List of vehicles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  vehicles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        vehicle_id:
+                          type: integer
+                        vin:
+                          type: string
+        '404':
+          description: No vehicles found for this user
+
+  /api.php/vehicle_health.php:
+    get:
+      summary: Get latest vehicle health prediction
+      description: Returns the latest health prediction for a vehicle by its database vehicle_id.
+      parameters:
+        - in: query
+          name: vehicle_id
+          schema:
+            type: integer
+          required: true
+          description: The database vehicle_id of the vehicle.
+      responses:
+        '200':
+          description: Latest health prediction for the vehicle
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  car_health:
+                    type: string
+                    description: Health status ("Normal" or "Issue")
+                  predicted_dtc:
+                    type: integer
+                    description: Trouble code category
+                  remaining_useful_life:
+                    type: number
+                    description: Remaining useful life in hours
+        '400':
+          description: Missing or invalid vehicle_id
+        '404':
+          description: No batch or prediction found for this vehicle
+
+  /fix.php/recent_vehicles.php:
+    get:
+      summary: Get recent vehicles for the logged-in mechanic
+      description: Returns a list of vehicles for which the current mechanic user has submitted a batch reading.
+      responses:
+        '200':
+          description: List of recent vehicles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    vin:
+                      type: string
+                    recorded_at:
+                      type: string
+                      format: date-time
+                    binary_classification:
+                      type: string
+        '403':
+          description: Not authorized
+
+  /fix.php/stats.php:
+    get:
+      summary: Get system stats for the logged-in mechanic
+      description: Returns statistics such as total vehicles, healthy catalysts, and catalyst issues for the current user.
+      responses:
+        '200':
+          description: System stats
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  numVehicles:
+                    type: integer
+                  numHealthyCatalysts:
+                    type: integer
+                  numUnhealthyCatalysts:
+                    type: integer
+        '403':
+          description: Not authorized
+
+  /fix.php/vehicle_data.php:
+    get:
+      summary: Get detailed vehicle data by VIN (mechanic)
+      description: Returns all batch readings, predictions, and readings for a vehicle by VIN, for the logged-in mechanic.
+      parameters:
+        - in: query
+          name: vin
+          schema:
+            type: string
+          required: true
+          description: Vehicle Identification Number
+      responses:
+        '200':
+          description: Array of batch data objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    batch_id:
+                      type: integer
+                    recorded_at:
+                      type: string
+                      format: date-time
+                    user_name:
+                      type: string
+                    number_of_pids:
+                      type: integer
+                    predictions:
+                      type: object
+                      properties:
+                        binary_classification:
+                          type: string
+                        trouble_code_category:
+                          type: integer
+                        vehicle_hours:
+                          type: number
+                        remaining_lifetime_hours:
+                          type: number
+                    readings:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          pid:
+                            type: integer
+                          field_name:
+                            type: string
+                          value:
+                            type: number
+                          units:
+                            type: string
+        '400':
+          description: VIN not provided
+        '403':
+          description: Not authorized
+
+  /util.php/cai.php:
+    post:
+      summary: Natural language vehicle query (CarMuse, DVLA only)
+      description: Accepts a natural language question and returns an AI-generated analysis about vehicles. Requires DVLA role (session-based authentication).
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                question:
+                  type: string
+                  description: The user's natural language question
+      responses:
+        '200':
+          description: AI-generated analysis
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  analysis:
+                    type: string
+        '400':
+          description: Missing question
+        '403':
+          description: Not authorized
+
+  /util.php/vehicle_data.php:
+    get:
+      summary: Get detailed vehicle data by VIN (DVLA only)
+      description: Returns all batch readings, predictions, and readings for a vehicle by VIN. Requires DVLA role (session-based authentication).
+      parameters:
+        - in: query
+          name: vin
+          schema:
+            type: string
+          required: true
+          description: Vehicle Identification Number
+      responses:
+        '200':
+          description: Array of batch data objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    batch_id:
+                      type: integer
+                    recorded_at:
+                      type: string
+                      format: date-time
+                    user_name:
+                      type: string
+                    number_of_pids:
+                      type: integer
+                    predictions:
+                      type: object
+                      properties:
+                        binary_classification:
+                          type: string
+                        trouble_code_category:
+                          type: integer
+                        vehicle_hours:
+                          type: number
+                        remaining_lifetime_hours:
+                          type: number
+                    readings:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          pid:
+                            type: integer
+                          field_name:
+                            type: string
+                          value:
+                            type: number
+                          units:
+                            type: string
+        '400':
+          description: VIN not provided
+        '403':
+          description: Not authorized
+
+  /upload.php:
+    post:
+      summary: Upload a CSV file with vehicle readings
+      description: |
+        Upload a CSV file containing vehicle readings. The file must include a VIN and user ID row.
+        The file is processed in the background and results are logged.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                csv_file:
+                  type: string
+                  format: binary
+                  description: The CSV file to upload
+      responses:
+        '200':
+          description: File received and processing started
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: No file uploaded or there was an upload error
+        '401':
+          description: Unauthorized access (VIN or USER_ID missing)
+
+components:
+  securitySchemes:
+    SessionAuth:
+      type: apiKey
+      in: cookie
+      name: PHPSESSID
+
+security:
+  - SessionAuth: []

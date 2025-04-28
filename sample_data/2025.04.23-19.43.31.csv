@@ -1,0 +1,68 @@
+PID,Description,Value,Units
+65,Heated Cat / Nox Monitor test status,0,
+65,Evaporative system test status,1,
+65,Secondary air sys test status,0,
+65,A/C refrigerant test status,0,
+3,Fuel System 2 Status,0,
+65,Catalyst test status,257,
+65,Oxygen Sensor test status,257,
+65,Oxygen Sensor Heater test status,257,
+7,Long Term Fuel Trim (Bank 1),5.46875,%
+65,EGR System test status,257,
+51,Barometric Pressure (absolute),97.0,kPa
+66,ECU voltage,14.771,V
+76,Comm. Throttle Actuator Cntrl,2.3529413,%
+81,Fuel type,1,
+86,Long term secondary oxygen sensor trim bank 3,n/a,%
+47,Fuel Level Input,5.490196,%
+52,O2 Sensor 1 lambda,0.99559015,
+52,O2 Sensor 1 current,-0.02734375,mA
+48,Warm-ups since ECU reset,126.0,
+67,Absolute Engine Load,25.09804,%
+13,Vehicle Speed,0.0,km/h
+19,Oxygen sensors present,3,
+68,Commanded Equivalence Ratio,99.99695,%
+49,Distance since ECU reset,5805.0,km
+31,Time Since Engine Start,0.16027778,h
+1,Number of Fault Codes,0.0,
+21,O2 Sensor Voltage B1S2,690.0,mV
+11,Intake Manifold Pressure,35.0,kPa
+1,Catalyst test status,256,
+1,Heated Cat / Nox Monitor test status,0,
+60,CAT Temperature B1S1,335.3,°C
+1,Evaporative system test status,256,
+12,Engine RPM,703.0,/min
+69,Relative Throttle Position,2.3529413,%
+1,Secondary air sys test status,0,
+1,A/C refrigerant test status,0,
+1,MIL status,0,
+1,Oxygen Sensor test status,256,
+1,Oxygen Sensor Heater test status,256,
+1,EGR System test status,256,
+65,Component test status,1,
+17,Absolute Throttle Position,12.54902,%
+65,Ignition monitoring status,0,
+15,Intake Air Temperature,48.0,°C
+65,Misfire status,1,
+65,Fuel system test status,17,
+3,Fuel System 1 Status,2,
+70,Ambient Air Temperature,50.0,°C
+4,Calculated Load Value,24.313726,%
+14,Timing Advance (Cyl. #1),0.0,°
+28,OBD conforms to,3,
+33,Distance since MIL activated,0.0,km
+86,Long term secondary oxygen sensor trim bank 1,-0.39215687,%
+71,Absolute Throttle Position B,12.156863,%
+5,Coolant Temperature,101.0,°C
+46,Commanded Evaporative Purge,43.92157,%
+35,Fuel Pressure (gauge),12930.0,kPa
+21,O2 Sensor fuel trim B1S2,99.21875,%
+74,Absolute Throttle Position E,6.27451,%
+1,Misfire status,1,
+1,Fuel system test status,1,
+1,Component test status,1,
+1,Ignition monitoring status,0,
+6,Short Term Fuel Trim (Bank 1),-0.78125,%
+73,Absolute Throttle Position D,5.882353,%
+VIN,Vehicle identification number,,
+USER_ID,Logged in user ID,1,
