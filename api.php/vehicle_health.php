@@ -23,31 +23,53 @@ if (!isset($_REQUEST['vehicle_id'])) {
 
 $vehicleId = intval($_REQUEST['vehicle_id']);
 
-// Get the latest batch_id for this vehicle
-$stmt = $conn->prepare("SELECT batch_id FROM reading_batches WHERE vehicle_id = ? ORDER BY recorded_at DESC LIMIT 1");
+// Step 1: Get all batch_ids for this vehicle
+$stmt = $conn->prepare("SELECT batch_id FROM reading_batches WHERE vehicle_id = ?");
 $stmt->bind_param("i", $vehicleId);
 $stmt->execute();
-$stmt->bind_result($batchId);
-if (!$stmt->fetch()) {
-    http_response_code(404);
-    echo json_encode(['error' => 'No batch found for this vehicle']);
-    exit;
+$result = $stmt->get_result();
+
+$batchIds = [];
+while ($row = $result->fetch_assoc()) {
+    $batchIds[] = $row['batch_id'];
 }
 $stmt->close();
 
-// Get the latest prediction for this batch
-$stmt = $conn->prepare("SELECT binary_classification, trouble_code_category, remaining_lifetime_hours FROM predictions WHERE batch_id = ? ORDER BY prediction_id DESC LIMIT 1");
-$stmt->bind_param("i", $batchId);
+if (empty($batchIds)) {
+    http_response_code(404);
+    echo json_encode(['error' => 'No batches found for this vehicle']);
+    exit;
+}
+
+// Step 2: Get predictions for these batch_ids, ordered by prediction_id DESC, limited to 10
+$placeholders = implode(',', array_fill(0, count($batchIds), '?'));
+$types = str_repeat('i', count($batchIds));
+$query = "SELECT batch_id, binary_classification, trouble_code_category, remaining_lifetime_hours 
+          FROM predictions 
+          WHERE batch_id IN ($placeholders) 
+          ORDER BY prediction_id DESC 
+          LIMIT 10";
+
+$stmt = $conn->prepare($query);
+$stmt->bind_param($types, ...$batchIds);
 $stmt->execute();
-$stmt->bind_result($carHealth, $dtc, $rul);
-if ($stmt->fetch()) {
-    echo json_encode([
-        'car_health' => ($carHealth === 'normal') ? 'Normal' : 'Issue',
-        'predicted_dtc' => $dtc,
-        'remaining_useful_life' => $rul
-    ]);
+$result = $stmt->get_result();
+
+$predictions = [];
+while ($row = $result->fetch_assoc()) {
+    $predictions[] = [
+        'batch_id' => $row['batch_id'],
+        'car_health' => ($row['binary_classification'] === 'normal') ? 'Normal' : 'Issue',
+        'predicted_dtc' => $row['trouble_code_category'],
+        'remaining_useful_life' => $row['remaining_lifetime_hours']
+    ];
+}
+
+if (!empty($predictions)) {
+    echo json_encode($predictions);
 } else {
     http_response_code(404);
-    echo json_encode(['error' => 'No prediction found for this vehicle']);
+    echo json_encode(['error' => 'No predictions found for this vehicle']);
 }
+
 $stmt->close();
