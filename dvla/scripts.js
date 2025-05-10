@@ -189,13 +189,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelector('.lifetime .stat-value').textContent =
             latest.predictions?.remaining_lifetime_hours !== undefined
-                ? `${Math.round(latest.predictions.remaining_lifetime_hours).toLocaleString()} hours`
+                ? `${Math.round(latest.predictions.remaining_lifetime_hours/24).toLocaleString()} days`
                 : 'N/A';
 
-        document.querySelector('.hours .stat-value').textContent =
-            latest.predictions?.vehicle_hours !== undefined
-                ? `${Math.round(latest.predictions.vehicle_hours).toLocaleString()} hours`
-                : 'N/A';
+        // 
 
         // Find warm-ups and temperature from latest batch
         let warmups = null, tempRange = null;
@@ -260,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 predRow.innerHTML = `
             <td>${batch.recorded_at ? new Date(batch.recorded_at).toLocaleDateString() : ''}</td>
             <td class="${healthClass}">${health}</td>
-            <td>${batch.predictions.remaining_lifetime_hours !== undefined ? Math.round(batch.predictions.remaining_lifetime_hours).toLocaleString() + ' hours' : 'N/A'}</td>
+            <td>${batch.predictions.remaining_lifetime_hours !== undefined ? Math.round(batch.predictions.remaining_lifetime_hours/24).toLocaleString() + ' days' : 'N/A'}</td>
             <td>${troubleCategory}</td>
             <td>
                 <button class="btn btn-outline btn-sm view-prediction-btn" data-batch-id="${batch.batch_id}">
@@ -344,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h3 class="mb-2">Prediction Details</h3>
             <div class="card mb-3">
                 <p><strong>Health Status:</strong> <span class="${healthClass}">${healthStatus}</span></p>
-                <p><strong>Remaining Lifetime:</strong> ${prediction.remaining_lifetime_hours !== undefined ? Math.round(prediction.remaining_lifetime_hours).toLocaleString() + ' hours' : 'N/A'}</p>
+                <p><strong>Remaining Lifetime:</strong> ${prediction.remaining_lifetime_hours !== undefined ? Math.round(prediction.remaining_lifetime_hours/24).toLocaleString() + ' days' : 'N/A'}</p>
                 <p><strong>Trouble Category:</strong> ${prediction.trouble_code_category ?? 'N/A'}</p>
             </div>
         `;

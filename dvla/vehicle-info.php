@@ -96,10 +96,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'dvla') {
                             <div class="stat-value">Loading...</div>
                         </div>
 
-                        <div class="stat-balloon hours" data-stat="hours">
-                            <div class="stat-title">Operational Hours</div>
-                            <div class="stat-value">Loading...</div>
-                        </div>
+ 
 
                         <div class="stat-balloon warmups" data-stat="warmups">
                             <div class="stat-title">Warm-up Count</div>
@@ -151,7 +148,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'dvla') {
                         <tr>
                             <th>Date</th>
                             <th>Health Status</th>
-                            <th>Hours Until Failure</th>
+                            <th>Days Until Failure</th>
                             <th>Trouble Category</th>
                             <th>Action</th>
                         </tr>
