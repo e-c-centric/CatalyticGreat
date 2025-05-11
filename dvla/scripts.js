@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.querySelector('.lifetime .stat-value').textContent =
             latest.predictions?.remaining_lifetime_hours !== undefined
-                ? `${Math.round(latest.predictions.remaining_lifetime_hours/24).toLocaleString()} days`
+                ? `${Math.round(latest.predictions.remaining_lifetime_hours / 24).toLocaleString()} days`
                 : 'N/A';
 
         // 
@@ -220,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${batch.batch_id || ''}</td>
-                <td>${batch.recorded_at ? new Date(batch.recorded_at).toLocaleDateString() : ''}</td>
                 <td>${batch.number_of_pids || (batch.readings ? batch.readings.length : '')}</td>
                 <td>${batch.user_name || ''}</td>
                 <td>
@@ -241,32 +240,73 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
+        const categoryCodeMap = {
+            0: 'P0133',
+            1: 'C0300',
+            2: 'P0079P2004P3000',
+            3: 'P0078U1004P3000',
+            4: 'P0079C1004P3000',
+            5: 'P007EP2036P18F0',
+            6: 'P007EP2036P18D0',
+            7: 'P007FP2036P18D0',
+            8: 'P0079P1004P3000',
+            9: 'P007EP2036P18E0',
+            10: 'P007FP2036P18E0',
+            11: 'P0078B0004P3000',
+            12: 'P007FP2036P18F0'
+        };
+
         // Populate Predictions table (show all batches' predictions)
         const predictionsList = document.getElementById('predictions-list');
         predictionsList.innerHTML = '';
-        // ...existing code inside loadVehicleInfo...
         batches.forEach(batch => {
-            if (batch.predictions) {
-                const health = batch.predictions.binary_classification === 'normal' ? 'Healthy' : 'Issue Detected';
-                const healthClass = batch.predictions.binary_classification === 'normal' ? 'text-success' : 'text-danger';
-                // Show "No DTC Detected" if trouble_code_category is 13
-                let troubleCategory = batch.predictions.trouble_code_category == 13
-                    ? 'No DTC Detected'
-                    : (batch.predictions.trouble_code_category ?? 'N/A');
-                const predRow = document.createElement('tr');
-                predRow.innerHTML = `
-            <td>${batch.recorded_at ? new Date(batch.recorded_at).toLocaleDateString() : ''}</td>
+            if (!batch.predictions) return;
+
+            const health = batch.predictions.binary_classification === 'normal'
+                ? 'Healthy'
+                : 'Issue Detected';
+            const healthClass = batch.predictions.binary_classification === 'normal'
+                ? 'text-success'
+                : 'text-danger';
+
+            const catNum = batch.predictions.trouble_code_category;
+            let troubleDisplay;
+            if (catNum === 13) {
+                troubleDisplay = 'No DTC Detected';
+            } else if (categoryCodeMap.hasOwnProperty(catNum)) {
+                const code = categoryCodeMap[catNum];
+                troubleDisplay = `<a href="#" class="dtc-chat-link" data-code="${code}">${code}</a>`;
+            } else {
+                troubleDisplay = catNum ?? 'N/A';
+            }
+
+            const predRow = document.createElement('tr');
+            predRow.innerHTML = `
             <td class="${healthClass}">${health}</td>
-            <td>${batch.predictions.remaining_lifetime_hours !== undefined ? Math.round(batch.predictions.remaining_lifetime_hours/24).toLocaleString() + ' days' : 'N/A'}</td>
-            <td>${troubleCategory}</td>
+            <td>${batch.predictions.remaining_lifetime_hours !== undefined
+                    ? Math.round(batch.predictions.remaining_lifetime_hours / 24).toLocaleString() + ' days'
+                    : 'N/A'
+                }</td>
+            <td>${troubleDisplay}</td>
             <td>
                 <button class="btn btn-outline btn-sm view-prediction-btn" data-batch-id="${batch.batch_id}">
                     Details
                 </button>
             </td>
         `;
-                predictionsList.appendChild(predRow);
-            }
+            predictionsList.appendChild(predRow);
+        });
+
+        document.querySelectorAll('.dtc-chat-link').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                const code = el.dataset.code;
+                const prompt = `I am staff at DVLA. I am checking how fit for purpose this vehicle is. Explain the diagnostic trouble code that follows, stating it is roadworthy, and any recommendations you have: ${code}`;
+                const url =
+                    'https://chat.openai.com/?model=gpt-4&prompt=' +
+                    encodeURIComponent(prompt);
+                window.open(url, '_blank');
+            });
         });
 
         // Add event listeners to prediction view buttons
@@ -277,6 +317,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (batch) showPredictionDetail(batch.predictions, batch);
             });
         });
+
+        renderPredictionCharts(batches);
 
         // Access logs tab (not available in backend data)
         const accessList = document.getElementById('access-list');
@@ -341,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <h3 class="mb-2">Prediction Details</h3>
             <div class="card mb-3">
                 <p><strong>Health Status:</strong> <span class="${healthClass}">${healthStatus}</span></p>
-                <p><strong>Remaining Lifetime:</strong> ${prediction.remaining_lifetime_hours !== undefined ? Math.round(prediction.remaining_lifetime_hours/24).toLocaleString() + ' days' : 'N/A'}</p>
+                <p><strong>Remaining Lifetime:</strong> ${prediction.remaining_lifetime_hours !== undefined ? Math.round(prediction.remaining_lifetime_hours / 24).toLocaleString() + ' days' : 'N/A'}</p>
                 <p><strong>Trouble Category:</strong> ${prediction.trouble_code_category ?? 'N/A'}</p>
             </div>
         `;
@@ -451,4 +493,111 @@ function loadVehicle(vin) {
     vin = vin.replace(/[^A-Za-z0-9]/g, '');
     localStorage.setItem('selectedVin', vin);
     window.location.href = 'vehicle-info.php';
+}
+
+function renderPredictionCharts(batches) {
+    // sort oldest→newest, keep last 100
+    batches.sort((a, b) => new Date(a.recorded_at) - new Date(b.recorded_at));
+    const recent = batches.slice(-100);
+
+    // data arrays
+    const idx = recent.map((_, i) => i + 1);
+    const health = recent.map(b => b.predictions?.binary_classification === 'normal' ? 1 : 0);
+    const dtc = recent.map(b => b.predictions?.trouble_code_category ?? null);
+    const lifetime = recent.map(b => b.predictions?.remaining_lifetime_hours !== undefined
+        ? Math.round(b.predictions.remaining_lifetime_hours / 24)
+        : null);
+
+    // common opts
+    const common = {
+        maintainAspectRatio: false,
+        scales: {
+            x: { display: false },
+            y: { grid: { color: '#eee' } }
+        },
+        plugins: {
+            legend: { display: false },
+            tooltip: { enabled: true },
+            title: { display: true, text: '' }
+        }
+    };
+
+    // 1) Health (step area)
+
+    new Chart('healthChart', {
+        type: 'bar',
+        data: {
+            labels: recent.map((_, i) => i + 1),
+            datasets: [{
+                data: health,
+                backgroundColor: health.map(v => v === 1
+                    ? 'var(--success)'
+                    : 'var(--danger)')
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                x: { display: false },
+                y: { min: 0, max: 1, ticks: { stepSize: 1, callback: v => v }, grid: { color: '#eee' } }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true },
+                title: { display: true, text: 'Catalyst Health' }
+            }
+        }
+    });
+
+    // 2) DTC (stepped line)
+    new Chart('dtcChart', {
+        type: 'line',
+        data: {
+            labels: idx, datasets: [{
+                data: dtc,
+                borderColor: '#ffc107',
+                backgroundColor: 'rgba(255,193,7,0.2)',
+                fill: true,
+                stepped: 'middle',
+                pointRadius: 3
+            }]
+        },
+        options: {
+            ...common,
+            scales: {
+                x: common.scales.x,
+                y: { min: 0, max: 13, ticks: { stepSize: 1 }, grid: { color: '#eee' } }
+            },
+            plugins: {
+                ...common.plugins,
+                title: { text: 'Trouble Code Category (0–13)' }
+            }
+        }
+    });
+
+    // 3) Lifetime (smooth line)
+    new Chart('lifetimeChart', {
+        type: 'line',
+        data: {
+            labels: idx, datasets: [{
+                data: lifetime,
+                borderColor: '#1EAEDB',
+                backgroundColor: 'rgba(30,174,219,0.2)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 2
+            }]
+        },
+        options: {
+            ...common,
+            scales: {
+                x: common.scales.x,
+                y: { beginAtZero: true, grid: { color: '#eee' } }
+            },
+            plugins: {
+                ...common.plugins,
+                title: { text: 'Remaining Useful Life (days)' }
+            }
+        }
+    });
 }

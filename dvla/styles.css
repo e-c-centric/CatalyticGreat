@@ -264,6 +264,13 @@ nav ul li a:hover {
     color: var(--dark-gray);
 }
 
+
+.charts-vertical-container canvas {
+    width: 400px !important;
+    height: 400px !important;
+    margin-bottom: 2rem;
+}
+
 .stat-balloon .stat-value {
     font-size: 1.1rem;
     font-weight: 700;
@@ -578,6 +585,51 @@ nav ul li a:hover {
 
 .mb-4 {
     margin-bottom: 2rem;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-gap: 2rem;
+  margin-top: 1rem;
+}
+.chart-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+}
+.chart-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* ensure canvas fills its parent */
+.chart-card canvas {
+  width: 100% !important;
+  height: 350px !important;
+}
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+.legend-marker {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.legend-marker.issue {
+  background-color: var(--danger); /* red */
+}
+.legend-marker.normal {
+  background-color: var(--success); /* green */
 }
 
 .hidden {

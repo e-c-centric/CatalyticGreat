@@ -29,6 +29,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -41,6 +43,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
+                    <li><a href="carmuse.php">CarMuse</a></li>
                 </ul>
             </nav>
         </div>
@@ -95,10 +98,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
                             <div class="stat-value">Loading...</div>
                         </div>
 
-                        <div class="stat-balloon hours" data-stat="hours">
-                            <div class="stat-title">Operational Hours</div>
-                            <div class="stat-value">Loading...</div>
-                        </div>
+
 
                         <div class="stat-balloon warmups" data-stat="warmups">
                             <div class="stat-title">Warm-up Count</div>
@@ -120,6 +120,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
                 <button class="tab-btn active" data-tab="readings-tab">Reading Batches</button>
                 <button class="tab-btn" data-tab="predictions-tab">Predictions History</button>
                 <button class="tab-btn" data-tab="access-tab">Access Logs</button>
+                <button class="tab-btn" data-tab="charts-tab">Charts</button>
+
             </div>
 
             <!-- Tab Content -->
@@ -130,7 +132,6 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
                     <thead>
                         <tr>
                             <th>Batch ID</th>
-                            <th>Date Collected</th>
                             <th>PIDs Included</th>
                             <th>Submitted By</th>
                             <th>Action</th>
@@ -145,13 +146,15 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
             <div id="predictions-tab" class="tab-content">
                 <h3 class="mb-3">Predictions History</h3>
                 <p class="mb-2">Timeline of vehicle's health status and predictions:</p>
+                <div class="charts-container mb-4" style="display: grid; grid-gap:2rem; grid-template-columns: repeat(auto-fit,minmax(200px,1fr));">
+
+                </div>
                 <table class="data-table">
                     <thead>
                         <tr>
-                            <th>Date</th>
                             <th>Health Status</th>
-                            <th>Hours Until Failure</th>
-                            <th>Trouble Category</th>
+                            <th>Days Until Failure</th>
+                            <th>Trouble Category (click to find out more)</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -185,6 +188,29 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
                     </tbody>
                 </table>
             </div>
+
+            <div id="charts-tab" class="tab-content">
+                <h3 class="mb-3">Charts Overview</h3>
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h4>Catalyst Health</h4>
+                        <canvas id="healthChart"></canvas>
+                        <div class="chart-legend">
+                            <div><span class="legend-marker issue"></span>Issue (0)</div>
+                            <div><span class="legend-marker normal"></span>Normal (1)</div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Trouble Code Category</h4>
+                        <canvas id="dtcChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Remaining Useful Life (days)</h4>
+                        <canvas id="lifetimeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 

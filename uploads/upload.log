@@ -293,3 +293,215 @@
 [2025-05-09 13:05:12] Cloud function error: 1
 [2025-05-09 13:05:24] File received: 2025.05.09-13.05.24.csv, Size: 1142 bytes, VIN: GE18517, USER_ID: 11
 [2025-05-09 13:05:24] Cloud function error: 1
+[2025-05-10 15:57:20] File received: 2025.05.10-15.57.19.csv, Size: 1049 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-10 15:57:30] Cloud function error: 1
+[2025-05-10 15:57:46] File received: 2025.05.10-15.57.45.csv, Size: 1055 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-10 15:57:46] Cloud function error: 1
+[2025-05-10 16:02:23] File received: 2025.05.10-16.02.22.csv, Size: 1053 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-10 16:02:23] Cloud function error: 1
+[2025-05-10 16:02:35] File received: 2025.05.10-16.02.34.csv, Size: 1054 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-10 16:02:36] Cloud function error: 1
+[2025-05-11 00:21:43] File received: 2025.05.11-00.21.42.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:22:03] File received: 2025.05.11-00.22.02.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:22:10] File received: 2025.05.11-00.22.07.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:22:59] File received: 2025.05.11-00.22.59.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:23:41] File received: 2025.05.11-00.23.40.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:27:25] File received: 2025.05.11-00.27.14.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:27:33] File received: 2025.05.11-00.27.33.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:28:26] File received: 2025.05.11-00.28.25.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:28:42] File received: 2025.05.11-00.28.42.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:28:44] File received: 2025.05.11-00.28.44.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:28:46] File received: 2025.05.11-00.28.46.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:30:30] File received: 2025.05.11-00.30.29.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:31:06] File received: 2025.05.11-00.31.06.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:31:08] File received: 2025.05.11-00.31.08.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:31:31] File received: 2025.05.11-00.31.31.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:33:08] File received: 2025.05.11-00.33.08.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:34:25] File received: 2025.05.11-00.34.24.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:36:17] File received: 2025.05.11-00.36.16.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:36:35] File received: 2025.05.11-00.36.35.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:36:43] File received: 2025.05.11-00.36.43.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:37:05] File received: 2025.05.11-00.37.05.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:37:31] File received: 2025.05.11-00.37.31.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:38:24] File received: 2025.05.11-00.38.24.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:43:55] File received: 2025.05.11-00.43.54.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:44:34] File received: 2025.05.11-00.44.34.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 00:48:02] File received: 2025.05.11-00.48.01.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 12
+[2025-05-11 13:59:42] File received: 2025.05.09-10.32.45.csv, Size: 120 bytes, VIN: GN67925, USER_ID: 2
+[2025-05-11 13:59:53] Cloud function response: {
+    "BinaryClassification": "Normal",
+    "PredictedHours": 2.753530406951904,
+    "RemainingLifetimeHours": 21897.246469593047,
+    "TroubleCodeCategory": 13,
+    "warning": "Some inputs were missing and placeholders used; outputs have been throttled."
+}
+[2025-05-11 13:59:53] Prediction ID: 32
+[2025-05-11 15:28:12] File received: 2025.05.09-12.36.58.csv, Size: 1152 bytes, VIN: GE18517, USER_ID: 2
+[2025-05-11 15:28:13] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 6,
+    "PredictedHours": 4.671656211217244,
+    "RemainingLifetimeHours": 17515.328343788784,
+    "TroubleCodeCategory": 13,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:28:13] Prediction ID: 33
+[2025-05-11 15:28:54] File received: 2025.05.09-13.04.32.csv, Size: 101 bytes, VIN: GE18517, USER_ID: 11
+[2025-05-11 15:30:22] File received: 2025.05.09-12.51.40.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 11
+[2025-05-11 15:30:43] File received: 2025.05.09-12.51.49.csv, Size: 94 bytes, VIN: MISSING, USER_ID: 11
+[2025-05-11 15:30:59] File received: 2025.05.09-13.05.12.csv, Size: 1142 bytes, VIN: GE18517, USER_ID: 11
+[2025-05-11 15:31:19] File received: 2025.05.10-15.57.19.csv, Size: 1049 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-11 15:31:19] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 9,
+    "PredictedHours": 3.2971569061279298,
+    "RemainingLifetimeHours": 17516.702843093874,
+    "TroubleCodeCategory": 13,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:31:19] Prediction ID: 34
+[2025-05-11 15:31:43] File received: 2025.05.10-16.02.34.csv, Size: 1054 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-11 15:31:43] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 11,
+    "PredictedHours": 3.5717382629712424,
+    "RemainingLifetimeHours": 17516.42826173703,
+    "TroubleCodeCategory": 13,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:31:43] Prediction ID: 35
+[2025-05-11 15:32:02] File received: 2025.05.10-16.02.22.csv, Size: 1053 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-11 15:32:02] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 6,
+    "PredictedHours": 3.4447996099789937,
+    "RemainingLifetimeHours": 17516.55520039002,
+    "TroubleCodeCategory": 13,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:32:02] Prediction ID: 36
+[2025-05-11 15:32:22] File received: 2025.05.10-15.57.45.csv, Size: 1055 bytes, VIN: GS24414, USER_ID: 13
+[2025-05-11 15:32:22] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 9,
+    "PredictedHours": 3.1094384074211123,
+    "RemainingLifetimeHours": 17516.89056159258,
+    "TroubleCodeCategory": 13,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:32:22] Prediction ID: 37
+[2025-05-11 15:32:37] File received: 2025.05.09-13.05.24.csv, Size: 1142 bytes, VIN: GE18517, USER_ID: 11
+[2025-05-11 15:32:53] File received: 2025.05.09-13.05.12.csv, Size: 1142 bytes, VIN: GE18517, USER_ID: 11
+[2025-05-11 15:33:10] File received: 2025.05.09-13.04.32.csv, Size: 101 bytes, VIN: GE18517, USER_ID: 11
+[2025-05-11 15:33:26] File received: 2025.05.09-10.32.45.csv, Size: 120 bytes, VIN: GN67925, USER_ID: 2
+[2025-05-11 15:33:26] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 4,
+    "PredictedHours": 1.6521182441711424,
+    "RemainingLifetimeHours": 10510.347881755828,
+    "TroubleCodeCategory": 13,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 30%."
+}
+[2025-05-11 15:33:26] Prediction ID: 38
+[2025-05-11 15:33:38] File received: 2025.05.09-10.32.45.csv, Size: 120 bytes, VIN: GN67925, USER_ID: 2
+[2025-05-11 15:33:38] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 8,
+    "PredictedHours": 1.6521182441711424,
+    "RemainingLifetimeHours": 10510.347881755828,
+    "TroubleCodeCategory": 13,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 30%."
+}
+[2025-05-11 15:33:38] Prediction ID: 39
+[2025-05-11 15:33:50] File received: 2025.05.09-13.04.32.csv, Size: 101 bytes, VIN: GE18517, USER_ID: 11
+[2025-05-11 15:34:00] File received: 2025.05.09-12.36.58.csv, Size: 1152 bytes, VIN: GE18517, USER_ID: 2
+[2025-05-11 15:34:00] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "DTC": 2,
+    "PredictedHours": 4.671656211217244,
+    "RemainingLifetimeHours": 17515.328343788784,
+    "TroubleCodeCategory": 13,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:34:00] Prediction ID: 40
+[2025-05-11 15:39:29] File received: 2025.05.09-12.36.58.csv, Size: 1152 bytes, VIN: GE18517, USER_ID: 2
+[2025-05-11 15:39:30] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 4.671656211217244,
+    "RemainingLifetimeHours": 17515.328343788784,
+    "TroubleCodeCategory": 9,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:39:30] Prediction ID: 41
+[2025-05-11 15:39:34] File received: 2025.05.09-12.36.58.csv, Size: 1152 bytes, VIN: GE18517, USER_ID: 2
+[2025-05-11 15:39:35] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 4.671656211217244,
+    "RemainingLifetimeHours": 17515.328343788784,
+    "TroubleCodeCategory": 12,
+    "warning": "1 missing (TIMING_ADVANCE); throttled by 50%."
+}
+[2025-05-11 15:39:35] Prediction ID: 42
+[2025-05-11 15:39:45] File received: 2025.05.09-10.32.45.csv, Size: 120 bytes, VIN: GN67925, USER_ID: 2
+[2025-05-11 15:39:45] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 1.6521182441711424,
+    "RemainingLifetimeHours": 10510.347881755828,
+    "TroubleCodeCategory": 4,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 30%."
+}
+[2025-05-11 15:39:45] Prediction ID: 43
+[2025-05-11 15:39:58] File received: 2025.05.09-10.32.45.csv, Size: 120 bytes, VIN: GN67925, USER_ID: 2
+[2025-05-11 15:39:58] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 1.6521182441711424,
+    "RemainingLifetimeHours": 10510.347881755828,
+    "TroubleCodeCategory": 4,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 30%."
+}
+[2025-05-11 15:39:58] Prediction ID: 44
+[2025-05-11 15:40:32] File received: 2025.05.09-10.32.45.csv, Size: 120 bytes, VIN: GN67925, USER_ID: 2
+[2025-05-11 15:40:32] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 1.6521182441711424,
+    "RemainingLifetimeHours": 10510.347881755828,
+    "TroubleCodeCategory": 2,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 30%."
+}
+[2025-05-11 15:40:32] Prediction ID: 45
+[2025-05-11 15:47:19] File received: 2025.05.09-10.32.45.csv, Size: 120 bytes, VIN: GN67925, USER_ID: 2
+[2025-05-11 15:47:20] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 0.5507060813903809,
+    "RemainingLifetimeHours": 3503.4492939186093,
+    "TroubleCodeCategory": 0,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 10%."
+}
+[2025-05-11 15:47:20] Prediction ID: 46
+[2025-05-11 16:34:13] File received: 2025.05.09-10.32.45.csv, Size: 124 bytes, VIN: GN67925, USER_ID: 5
+[2025-05-11 16:34:22] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 0.5507060813903809,
+    "RemainingLifetimeHours": 3503.4492939186093,
+    "TroubleCodeCategory": 9,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 10%."
+}
+[2025-05-11 16:34:22] Prediction ID: 47
+[2025-05-11 16:35:09] File received: 2025.05.09-10.32.45.csv, Size: 124 bytes, VIN: GN67925, USER_ID: 5
+[2025-05-11 16:35:10] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 0.5507060813903809,
+    "RemainingLifetimeHours": 3503.4492939186093,
+    "TroubleCodeCategory": 2,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 10%."
+}
+[2025-05-11 16:35:10] Prediction ID: 48
+[2025-05-11 16:36:19] File received: 2025.05.09-10.32.45.csv, Size: 124 bytes, VIN: GN67925, USER_ID: 9
+[2025-05-11 16:36:19] Cloud function response: {
+    "BinaryClassification": "Issue",
+    "PredictedHours": 0.5507060813903809,
+    "RemainingLifetimeHours": 3503.4492939186093,
+    "TroubleCodeCategory": 12,
+    "warning": "9 missing (ENGINE_POWER, ENGINE_COOLANT_TEMP, ENGINE_LOAD, ENGINE_RPM, AIR_INTAKE_TEMP, SPEED, SHORT TERM FUEL TRIM BANK 1, THROTTLE_POS, TIMING_ADVANCE); throttled by 10%."
+}
+[2025-05-11 16:36:19] Prediction ID: 49
