@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-// Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    echo json_encode(['error' => 'User not logged in']);
-    exit;
-}
-// Check if the user has the required role
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'dvla') {
-    echo json_encode(['error' => 'User does not have permission']);
-    exit;
-}
+// // Check if the user is logged in
+// if (!isset($_SESSION['user_id'])) {
+//     echo json_encode(['error' => 'User not logged in']);
+//     exit;
+// }
+// // Check if the user has the required role
+// if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'dvla') {
+//     echo json_encode(['error' => 'User does not have permission']);
+//     exit;
+// }
 
 require_once '../settings/config.php';
 
