@@ -43,7 +43,6 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'mechanic') {
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="carmuse.php">CarMuse</a></li>
                 </ul>
             </nav>
         </div>

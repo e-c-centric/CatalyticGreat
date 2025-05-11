@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
             el.addEventListener('click', e => {
                 e.preventDefault();
                 const code = el.dataset.code;
-                const prompt = `Explain the diagnostic trouble code ${code}`;
+                const prompt = `I am mechanic. I am checking how fit for purpose this vehicle is. Explain the diagnostic trouble code that follows, stating it is roadworthy, and any recommendations you have: ${code}`;
                 const url =
                     'https://chat.openai.com/?model=gpt-4&prompt=' +
                     encodeURIComponent(prompt);
